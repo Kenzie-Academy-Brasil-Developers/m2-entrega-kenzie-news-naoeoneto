@@ -1,0 +1,23 @@
+body, header, img, main, section, span, h1, article, h4, p, footer {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #5163D3;
+    --grey: #EEEEEE;
+    --white: #FFFFFF;
+    --lightgrey: #F9F9F9;
+    --lightblue: #D7E4FB;
+    --black: #1B1C1E;
+}
+
+body {
+    background-color: var(--lightgrey);
+    font-family: 'Roboto';
+    color: var(--black);
+}
