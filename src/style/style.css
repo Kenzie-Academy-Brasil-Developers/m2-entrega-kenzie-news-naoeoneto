@@ -1,0 +1,240 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    width: auto;
+    background-color: var(--blue);
+    height: 80px;
+    width: 100%;
+}
+
+.logo_site {
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.main__container {
+    width: 100%;
+    justify-content: center;
+}
+
+.main__container__main {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+}
+
+.main__container__div__imagem {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__container__imagem {
+    width: 100%;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__container__div {
+    margin: 0 2rem 4.5rem;
+}
+
+.main__container__fonte {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--white);
+    margin-top: -44px;
+    margin-bottom: 94px;
+    margin-left: 1rem;
+}
+
+.main__container__categoria, .main__container__news__categoria {
+    background-color: var(--lightblue);
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 10px;
+    width: 67px;
+    height: 16px;
+}
+
+h1 {
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--blue);
+    margin-top: 1rem;
+}
+
+.main__container__resumo, .main__container__fonteDesktop {
+    font-size: 0;
+}
+
+.main__news {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+ul {
+    padding-inline-start: 0;
+    width: 100%;
+}
+
+.main__container__news {
+    margin-bottom: 3.25rem;
+    background-color: var(--white);
+    height: 180px;
+    border-radius: 4px;
+    padding: 1.5rem;
+    border: 1px solid var(--grey);
+    font-family: 'Roboto';
+    justify-content: center;
+    list-style: none;
+}
+
+.main__container__news__imagem {
+    width: 0;
+    height: 0;
+}
+
+.main__container__news__categoria{
+    margin-top: 1rem;
+}
+
+.main__container__news__titulo {
+    font-family: 'Roboto Slab';
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--blue);
+    margin-top: 1rem;
+}
+
+.main__container__news__texto {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--black);
+    margin: 1rem 0;
+    width: 95%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main__container__news__fonte {
+    font-weight: 300;
+    font-size: 10px;
+    margin-top: 1rem;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    background-color: var(--grey);
+    justify-content: center;
+    align-items: center;
+    color: var(--black);
+    font-size: 12px;
+    font-weight: 300;
+}
+
+@media screen and (min-width: 587px){
+    .main__container__main {
+        margin-top: 96px;
+        margin-left: 230px;
+        margin-right: 230px;
+        margin-bottom: 6rem;
+        height: 360px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--white);
+        }
+
+    .main__container__imagem {
+        height: 360px;
+        width: 360px;
+        margin-bottom: -3.1rem;
+    }
+
+    .main__container__div {
+        width: 620px;
+        padding: 46px 24px;
+        margin-bottom: 0;
+    }
+
+    .main__container__categoria {
+        margin-top: 3rem;
+    }
+
+    h1 {
+        font-size: 36px;
+        font-family: 'Roboto Slab';
+    }
+
+    .main__news {
+        display: flex;
+        margin-left: 122px;
+        margin-right: 122px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .main__container__news {
+        width: 480px;
+        justify-content: center;
+        display: flex;
+        padding: 0;
+    }
+
+    .main__container__news__divinfo {
+        padding: 1rem;
+        width: 55%;
+    }
+
+    .main__container__news__imagem {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .main__container__fonte {
+        font-size: 0;
+    }
+
+    .main__container__news__titulo {
+        margin-top: 0.5rem;
+        font-size: 14px;
+    }
+
+    .main__container__resumo {
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 3rem;
+    }
+
+    .main__container__fonteDesktop {
+        font-size: 12px;
+        font-weight: 300;
+        color: var(--black);
+        margin-top: 40px;
+    }
+}
