@@ -4,48 +4,15 @@ let header = document.createElement("header")
 let imgLogo = document.createElement("img")
 let main = document.createElement("main")
 let mainSection = document.createElement("section")
-let mainDivImg = document.createElement("div")
-let mainImg = document.createElement("img")
-let mainFonte = document.createElement("p")
-let mainDiv = document.createElement("div")
-let mainCategoria = document.createElement("span")
-let mainTexto = document.createElement("h1")
-let mainResumo = document.createElement("p")
-let mainFonteDesktop = document.createElement("p")
 
 imgLogo.classList.add("logo_site")
 main.classList.add("main__container")
 mainSection.classList.add("main__container__main")
-mainDivImg.classList.add("main__container__div__imagem")
-mainImg.classList.add("main__container__imagem")
-mainFonte.classList.add("main__container__fonte")
-mainDiv.classList.add("main__container__div")
-mainCategoria.classList.add("main__container__categoria")
-mainResumo.classList.add("main__container__resumo")
-mainFonteDesktop.classList.add("main__container__fonteDesktop")
 imgLogo.src = "./src/assets/logo.svg"
-
-function noticiaPrincipal(){
-    const mainNoticia = fetch("https://kenzie-news-api.herokuapp.com/api/news/3/")
-                        .then(resp => resp.json())
-                        .then(resp => {
-                            mainImg.src = resp.imagem
-                            mainFonte.innerText = `Fonte: ${resp.fonte}`
-                            mainCategoria.innerText = `${resp.categoria}`
-                            mainTexto.innerText = `${resp.titulo}`
-                            mainResumo.innerText = `${resp.resumo}`
-                            mainFonteDesktop.innerText = `Fonte: ${resp.fonte}`
-                        })
-    return mainNoticia
-}
-noticiaPrincipal()
 
 body.append(header, main)
 header.appendChild(imgLogo)
 main.appendChild(mainSection)
-mainSection.append(mainDivImg, mainDiv)
-mainDivImg.append(mainImg, mainFonte)
-mainDiv.append(mainCategoria, mainTexto, mainResumo, mainFonteDesktop)
 
 let noticia = document.createElement("section")
 let ul = document.createElement("ul")
@@ -69,7 +36,38 @@ async function dataNoticias(){
 } 
 
 const noticias = await dataNoticias()
-console.log(noticias)
+
+function renderizarNoticiaPrincipal(elem){    
+    let mainDivImg = document.createElement("div")
+    let mainImg = document.createElement("img")
+    let mainFonte = document.createElement("p")
+    let mainDiv = document.createElement("div")
+    let mainCategoria = document.createElement("span")
+    let mainTexto = document.createElement("h1")
+    let mainResumo = document.createElement("p")
+    let mainFonteDesktop = document.createElement("p")
+
+    mainDivImg.classList.add("main__container__div__imagem")
+    mainImg.classList.add("main__container__imagem")
+    mainFonte.classList.add("main__container__fonte")
+    mainDiv.classList.add("main__container__div")
+    mainCategoria.classList.add("main__container__categoria")
+    mainResumo.classList.add("main__container__resumo")
+    mainFonteDesktop.classList.add("main__container__fonteDesktop")
+
+    mainImg.src                = `${elem.imagem}`
+    mainFonte.innerText        = `${elem.fonte}`
+    mainCategoria.innerText    = `${elem.categoria}`
+    mainTexto.innerText        = `${elem.titulo}`
+    mainResumo.innerText       = `${elem.resumo}`
+    mainFonteDesktop.innerText = `${elem.fonte}`
+    
+    mainSection.append(mainDivImg, mainDiv)
+    mainDivImg.append(mainImg, mainFonte)
+    mainDiv.append(mainCategoria, mainTexto, mainResumo, mainFonteDesktop)
+}
+
+renderizarNoticiaPrincipal(noticias[1])
 
 function renderizarNoticias(arr){
     const novaNoticia = arr.map((elem) => {      
